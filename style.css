@@ -2,6 +2,7 @@
 
 * {
   margin: 0;
+  color: rgb(115, 115, 115);
 }
 
 img {
@@ -41,7 +42,7 @@ a {
 /* ********** RESPONSIVE X-SMALL --> 'TILL 480PX ************** */
 
 .contenuto-wrapper-top {
-  height: calc(100% - 100px);
+  height: calc(100% - 130px);
   overflow: hidden;
 
   display: flex;
@@ -61,7 +62,7 @@ main {
 /* ************ PLAYBAR ************** */
 
 .playbar {
-  height: 100px;
+  height: 130px;
   background-color: rgb(40, 40, 40);
 }
 
@@ -70,4 +71,152 @@ main {
 .sidebar {
   width: 300px;
   background-color: black;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* *SIDEBAR LOGO* */
+
+#logo-intero {
+  width: 200px;
+  padding: 1.5rem;
+
+  /* per mobile display none */
+}
+
+#logo-small {
+  width: 40px;
+  padding: 1.5rem;
+}
+
+/* *SIDEBAR NAVIGATION */
+
+.sidebar > .navigation-sidebar,
+.sidebar > .playlist-sidebar {
+  padding: 1.5rem;
+  text-align: left;
+  /* debug */
+  /* height: 180px; */
+}
+
+.navigation-sidebar > ul,
+.playlist-sidebar > ul {
+  padding-inline-start: 0px;
+}
+
+.navigation-sidebar li {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.contenitore-navigation-list {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-sidebar img {
+  width: 38px;
+  text-align: left;
+  display: inline;
+  opacity: 70%;
+
+  padding-right: 0.5rem;
+}
+
+.navigation-sidebar h6,
+.playlist-sidebar h6 {
+  display: inline;
+  font-size: 19px;
+}
+
+/* HOVER */
+
+.contenitore-navigation-list:hover {
+  cursor: pointer;
+}
+
+.contenitore-navigation-list:hover img {
+  opacity: 100%;
+}
+
+.contenitore-navigation-list:hover h6 {
+  color: white;
+}
+
+/* *SIDEBAR PLAYLIST* */
+
+.sidebar > .playlist-sidebar {
+  flex-grow: 1;
+}
+
+.playlist-sidebar h6 {
+  display: inline;
+  font-size: 19px;
+  color: rgb(115, 115, 115);
+}
+
+.playlist-sidebar li {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+.crea-playlist {
+  display: flex;
+  align-items: center;
+
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+.crea-playlist h5 {
+  font-size: 21px;
+}
+
+.fa-square-plus {
+  color: white;
+  opacity: 70%;
+  font-size: 60px;
+  padding-right: 0.7rem;
+}
+
+.playlist-sidebar h4,
+.user-sidebar h4 {
+  color: white;
+  font-size: 23px;
+}
+
+/* *SIDEBAR USER* */
+
+.installa-user,
+.login-user {
+  display: flex;
+  align-items: center;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.user-sidebar .installa-user img {
+  width: 17px;
+  padding-right: 0.5rem;
+  opacity: 70%;
+}
+
+.user-sidebar .installa-user h6 {
+  font-size: 19px;
+}
+
+.user-sidebar .login-user img {
+  width: 38px;
+  height: 38px;
+  background-color: gray;
+  border-radius: 19px;
+  margin-right: 0.7rem;
+}
+
+.user-sidebar hr {
+  color: rgb(113, 113, 113);
+  margin: 0 1.5rem;
 }
