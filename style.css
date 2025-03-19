@@ -1,0 +1,25 @@
+/*  ************** CSS RESET ************ */
+
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: white;
+}
+
+/* *************** UTILS **************** */
+
+.container {
+  padding: 1.5rem;
+  max-width: 1080px;
+}
