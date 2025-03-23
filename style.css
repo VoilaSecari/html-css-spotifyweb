@@ -39,8 +39,7 @@ a {
   max-width: 1080px;
 }
 
-/* ********** RESPONSIVE X-SMALL --> 'TILL 480PX ************** */
-
+/* *********** BASE PAGE ************* */
 .contenuto-wrapper-top {
   height: calc(100% - 130px);
   overflow: hidden;
@@ -69,154 +68,264 @@ main {
 /* ************ SIDEBAR ************** */
 
 .sidebar {
-  width: 300px;
+  /* width: 300px; */
   background-color: black;
 
   display: flex;
   flex-direction: column;
 }
 
-/* *SIDEBAR LOGO* */
-
-#logo-intero {
-  width: 200px;
-  padding: 1.5rem;
-
-  /* per mobile display none */
-}
+/* ********* LOGO ******** */
 
 #logo-small {
   width: 40px;
   padding: 1.5rem;
 }
 
-/* *SIDEBAR NAVIGATION */
+/* ********** RESPONSIVE X-SMALL --> 'TILL 480PX ************** */
+@media screen and (min-width: 100px) {
+  /* DISPLAY NONE */
+  #logo-intero {
+    display: none;
+  }
 
-.sidebar > .navigation-sidebar,
-.sidebar > .playlist-sidebar {
-  padding: 1.5rem;
-  text-align: left;
-  /* debug */
-  /* height: 180px; */
+  .navigation-sidebar h6 {
+    display: none;
+  }
+
+  /* ****** NAVIGATION ******** */
+  .navigation-sidebar img {
+    width: 40px;
+    padding: 0.5rem 1.5rem;
+
+    opacity: 70%;
+  }
+
+  .navigation-sidebar {
+    flex-grow: 1;
+  }
+
+  .playlist-sidebar {
+    display: none;
+  }
+
+  .user-sidebar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1.3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .user-sidebar hr,
+  .user h2,
+  .download h6 {
+    display: none;
+  }
+
+  .download img {
+    width: 20px;
+  }
+
+  .user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: gray;
+  }
 }
 
-.navigation-sidebar > ul,
-.playlist-sidebar > ul {
-  padding-inline-start: 0px;
-}
+/* ******* RESPONSIVE SMALL --->  640px ******* */
 
-.navigation-sidebar li {
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
-}
+@media screen and (min-width: 640px) {
+  .sidebar {
+    width: 270px;
+  }
 
-.contenitore-navigation-list {
-  display: flex;
-  align-items: center;
-}
+  #logo-intero {
+    display: block;
+    width: 70%;
 
-.navigation-sidebar img {
-  width: 38px;
-  text-align: left;
-  display: inline;
-  opacity: 70%;
+    padding: 1.5rem;
+  }
 
-  padding-right: 0.5rem;
-}
+  #logo-small {
+    display: none;
+  }
 
-.navigation-sidebar h6,
-.playlist-sidebar h6 {
-  display: inline;
-  font-size: 19px;
-}
+  .icona-home,
+  .icona-cerca,
+  .icona-libreria {
+    display: flex;
+    align-items: center;
+  }
 
-/* HOVER */
+  .navigation-sidebar h6 {
+    display: inline;
+    font-size: 1rem;
+    font-weight: bold;
+  }
 
-.contenitore-navigation-list:hover {
-  cursor: pointer;
-}
+  /* NAVIGATION SIDEBAR */
 
-.contenitore-navigation-list:hover img {
-  opacity: 100%;
-}
+  .navigation-sidebar {
+    flex-grow: 0;
+  }
 
-.contenitore-navigation-list:hover h6 {
-  color: white;
-}
+  /* HOVER NAVIGATION */
+  .icona-home:hover,
+  .icona-cerca:hover,
+  .icona-libreria:hover {
+    border-left: 0.4rem solid limegreen;
+    cursor: pointer;
+  }
 
-/* *SIDEBAR PLAYLIST* */
+  .icona-home:hover img,
+  .icona-cerca:hover img,
+  .icona-libreria:hover img {
+    padding-left: 1.1rem;
 
-.sidebar > .playlist-sidebar {
-  flex-grow: 1;
-}
+    opacity: 100%;
+  }
 
-.playlist-sidebar h6 {
-  display: inline;
-  font-size: 19px;
-  color: rgb(115, 115, 115);
-}
+  .icona-home:hover h6,
+  .icona-cerca:hover h6,
+  .icona-libreria:hover h6 {
+    color: white;
+  }
 
-.playlist-sidebar li {
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
-}
+  /* PLAYLIST SIDEBAR */
 
-.crea-playlist {
-  display: flex;
-  align-items: center;
+  .playlist-sidebar {
+    display: block;
+    flex-grow: 1;
+  }
 
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
-}
+  .playlist-sidebar h2 {
+    display: block;
+    color: white;
+    font-size: 1.3rem;
+    padding-bottom: 1.5rem;
+    padding-top: 2rem;
+    padding-left: 1.5rem;
+  }
 
-.crea-playlist h5 {
-  font-size: 21px;
-}
+  .tasto-crea-playlist {
+    background-color: gray;
+    height: 3rem;
+    width: 3rem;
 
-.fa-square-plus {
-  color: white;
-  opacity: 70%;
-  font-size: 60px;
-  padding-right: 0.7rem;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.playlist-sidebar h4,
-.user-sidebar h4 {
-  color: white;
-  font-size: 23px;
-}
+  .crea-playlist {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
 
-/* *SIDEBAR USER* */
+  .crea-playlist i {
+    color: black;
+    text-align: center;
+    font-size: 2rem;
+  }
 
-.installa-user,
-.login-user {
-  display: flex;
-  align-items: center;
+  .crea-playlist h5 {
+    font-size: 1.3rem;
+  }
 
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 1.5rem;
-}
+  .playlist-attuali {
+    padding-inline-start: 0px;
+  }
 
-.user-sidebar .installa-user img {
-  width: 17px;
-  padding-right: 0.5rem;
-  opacity: 70%;
-}
+  .playlist-attuali li {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
 
-.user-sidebar .installa-user h6 {
-  font-size: 19px;
-}
+  .playlist-attuali-container {
+    padding-left: 1.5rem;
+  }
 
-.user-sidebar .login-user img {
-  width: 38px;
-  height: 38px;
-  background-color: gray;
-  border-radius: 19px;
-  margin-right: 0.7rem;
-}
+  /* HOVER PLAYLIST */
 
-.user-sidebar hr {
-  color: rgb(113, 113, 113);
-  margin: 0 1.5rem;
+  .crea-playlist:hover {
+    cursor: pointer;
+  }
+
+  .crea-playlist:hover .tasto-crea-playlist {
+    background-color: limegreen;
+  }
+
+  .crea-playlist:hover h5 {
+    color: white;
+  }
+
+  .playlist-attuali-container:hover {
+    color: white;
+    cursor: pointer;
+    border-left: 0.4rem solid limegreen;
+    padding-left: 1.1rem;
+  }
+
+  /* USER SIDEBAR */
+
+  .user-sidebar {
+    align-items: flex-start;
+
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .user-sidebar hr {
+    display: block;
+    width: 100%;
+    color: gray;
+  }
+
+  .user,
+  .download {
+    display: flex;
+    align-items: center;
+  }
+
+  .user h2,
+  .download h6 {
+    padding-left: 1rem;
+    display: block;
+  }
+
+  .user h2 {
+    color: white;
+  }
+
+  .download img {
+    opacity: 70%;
+  }
+
+  /* USER SIDEBAR HOVER */
+
+  .user:hover,
+  .download:hover {
+    cursor: pointer;
+  }
+
+  .user:hover h2 {
+    color: limegreen;
+  }
+
+  .download:hover img {
+    opacity: 100%;
+  }
+
+  .download:hover h6 {
+    color: white;
+  }
 }
